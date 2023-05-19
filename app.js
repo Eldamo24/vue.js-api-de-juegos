@@ -7,9 +7,9 @@ const myApp = {
      mounted() {
         try{
             this.traerJuegos().then(res => {
-                for (let i = 0; i < res.data.results.length; i++) {
-                    this.juegos.push(res.data.results[i]);
-                  }
+                for(game of res.data.results){
+                    this.juegos.push(game)
+                }
             })
             console.log(this.juegos)
         }catch(error){
@@ -27,7 +27,8 @@ const myApp = {
                 console.log("Error fatal ", error)
                 return undefined
             }
-        }
+        },
+
     }
 }
 
