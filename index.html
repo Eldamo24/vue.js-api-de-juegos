@@ -8,6 +8,11 @@
 </head>
 <body>
     <div id="myApp">
+        <div v-for="juego in this.juegos.results">
+            <p>{{juego.name}}</p>
+            <img v-bind:src="juego.background_image" alt="">
+        </div>
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="async-await-axios.js"></script>
