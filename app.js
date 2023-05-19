@@ -6,12 +6,17 @@ const myApp = {
     },
      mounted() {
         try{
-            let games = this.traerJuegos()
+            this.traerJuegos().then(res => {
+                for (let i = 0; i < res.data.results.length; i++) {
+                    this.juegos.push(res.data.results[i]);
+                  }
+            })
+            console.log(this.juegos)
         }catch(error){
             console.log("Error fatal ", error)
         }
-        
-        
+             
+            
     },
     methods: {
 
